@@ -1,0 +1,50 @@
+[
+    {
+        "id": "241",
+        "option_a": "切断毒源和脱离中毒现场,迅速将中毒者移至通风好,空气新鲜处",
+        "option_b": "保暖,避免活动和紧张",
+        "option_c": "解开衣领,通畅呼吸道;用简易方法给氧",
+        "option_d": "体表受刺激性.腐蚀性化学物污染时,应立即脱去衣服,用大量清水反",
+        "option_e": null,
+        "option_f": null,
+        "option_g": null,
+        "question": "以下关于急性中毒现场抢救的说法正确的是()",
+        "answer": "ABCD"
+    },
+    {
+        "id": "242",
+        "option_a": "要尽快使伤员置于安全地点",
+        "option_b": "胸外心脏按压位置要正确,用力要均匀",
+        "option_c": "可以密切配合进行口对口人工呼吸",
+        "option_d": "心脏按压操作疲劳时可中途休息",
+        "option_e": null,
+        "option_f": null,
+        "option_g": null,
+        "question": "施行胸外心脏按压术时,下列注意的事项中正确的是()",
+        "answer": "ABC"
+    },
+    {
+        "id": "243",
+        "option_a": "脑外伤,可能出现脑疝者",
+        "option_b": "内脏外露,未妥善处理者",
+        "option_c": "颈部伤有呼吸障碍者",
+        "option_d": "现场救护后伤情基本稳定者",
+        "option_e": null,
+        "option_f": null,
+        "option_g": null,
+        "question": "以下伤员应暂缓转运的()",
+        "answer": "BC"
+    },
+    {
+        "id": "245",
+        "option_a": "专门工作",
+        "option_b": "基层单位",
+        "option_c": "上级机构",
+        "option_d": "群众路线",
+        "option_e": null,
+        "option_f": null,
+        "option_g": null,
+        "question": "国家设立由有关部门组成的反恐怖主义工作领导机构,实行()相结合的原则,依靠.动员所有国家机关.武装力量.社会组织.企业事业单位.村(居)民委员会和个人共同开展反恐怖主义工作。",
+        "answer": "AD"
+    }
+]

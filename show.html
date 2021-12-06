@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Search</title>
+	</head>
+	<body>
+		<input name="quetype" type="radio" value="gjaqzsjsxxzl_jianda" />简答
+		<input name="quetype" type="radio" value="gjaqzsjsxxzl_tiankong" />填空
+		<input name="quetype" type="radio" value="gjaqzsjsxxzl_danxuan" checked="checked" />单选
+		<input name="quetype" type="radio" value="gjaqzsjsxxzl_duoxuan" />多选
+		<input name="quetype" type="radio" value="gjaqzsjsxxzl_panduan" />判断
+		<br/>
+		<input type="text" style="width: 100%;" id="keywords" value="增强全党全国人民国家安全意识" />
+		<input type="button" value="清空" onclick="clearInput()">
+		<input type="submit" name="" id="" value="搜索题目" onclick="searchQue()"/>
+		<p id="show"></p>
+		<script src="./js/jquery.js"></script>
+		<script type="text/javascript">
+			//clear the input 
+			function clearInput(){
+				$("#keywords").val("");
+			}
+			 
+			function format(obj){
+				//format json object to str
+				var str = JSON.stringify(obj);
+				//remove null in str
+				str = str.replace(/null/g, "");
+				//remove '{', '}' in str
+				str = str.replace(/{/g, "");
+				str = str.replace(/}/g, "");
+				//replace '",' to '<br>' in str
+				str = str.replace(/",/g, "<br>");
+				str = str.replace(/",/g, "");
+				//replace 'option_a' to 'A' in str
+				str = str.replace(/"option_a/g, "A");
+				str = str.replace(/"option_b/g, "B");
+				str = str.replace(/"option_c/g, "C");
+				str = str.replace(/"option_d/g, "D");
+				str = str.replace(/"option_e/g, "E");
+				str = str.replace(/"option_f/g, "F");
+				str = str.replace(/"option_g/g, "G");
+
+				str = str.replace(/"id/g, "id");
+				str = str.replace(/"question/g, "问题");
+				str = str.replace(/"answer/g, "答案");
+				//replace '":"' to '：' in str
+				str = str.replace(/":"/g, "：");
+				
+				str = str.replace(/E":,F":,G":,/g, "");
+				str = str.replace(/<br>E：<br>F：<br>G："/g, "");
+				
+				return str;
+			}
+
+			function searchQue(){
+				//refresh the p tag
+				$("#show").html("");
+				keyword = document.getElementById("keywords")['value'];
+				//which one quetype radio button is checked, then get its value
+				var quetype = document.getElementsByName("quetype");
+				for(var i=0;i<quetype.length;i++){
+					if(quetype[i].checked){
+						quetype = quetype[i].value;
+						break;
+					}
+				}
+				filename = quetype + '.json';
+				$.getJSON(filename,function(jsonData){
+					for(var i=0;i<jsonData.length;i++){
+						if(jsonData[i]['question'].indexOf(keyword)>=0){
+							//add formated json to existed p tag which id is show
+							document.getElementById("show").innerHTML += format(jsonData[i]) + '<br/>';
+						}
+					}
+				})
+				
+			}
+		</script>
+	</body>
+</html>
